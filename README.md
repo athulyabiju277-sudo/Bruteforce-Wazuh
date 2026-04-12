@@ -108,7 +108,7 @@ Alerts generated with:
 
 ###  Alert Details
 
-![Details](screenshots/alert-details.png)
+![Details](alert-details.png.jpeg)
 
 ---
 
