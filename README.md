@@ -96,7 +96,7 @@ Alerts generated with:
 
 ###  Brute Force Attack (Hydra)
 
-![Attack](screenshots/hydra-attack.png)
+![Attack](hydra-attack.png.jpeg)
 
 ###  Log Evidence (auth.log)
 
