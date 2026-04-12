@@ -1,5 +1,7 @@
 #  Brute Force Attack Simulation & Detection using Wazuh SIEM
 
+SOC Project | SIEM Detection | Log Analysis
+
 ##  Overview
 
 This project demonstrates an end-to-end Security Operations Center (SOC) use case by simulating an SSH brute force attack and detecting it using Wazuh SIEM. It highlights both offensive (attack simulation) and defensive (log analysis and alerting) cybersecurity techniques.
