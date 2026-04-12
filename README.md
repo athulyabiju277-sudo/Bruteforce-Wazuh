@@ -1,137 +1,183 @@
 #  Brute Force Attack Simulation & Detection using Wazuh SIEM
 
-SOC Project | SIEM Detection | Log Analysis
+ SOC Project | SIEM | Log Analysis | Threat Detection
+
+---
 
 ##  Overview
 
-This project demonstrates an end-to-end Security Operations Center (SOC) use case by simulating an SSH brute force attack and detecting it using Wazuh SIEM. It highlights both offensive (attack simulation) and defensive (log analysis and alerting) cybersecurity techniques.
+This project demonstrates an end-to-end SOC use case by simulating an SSH brute force attack and detecting it using Wazuh SIEM. It covers attack simulation, log analysis, alerting, and mapping to MITRE ATT&CK.
 
 ---
 
 ##  Objectives
 
-* Simulate brute force attack on SSH service
-* Monitor and analyze authentication logs
-* Detect malicious activity using SIEM
-* Investigate alerts and identify attacker behavior
+* Simulate SSH brute force attack
+* Monitor authentication logs
+* Detect suspicious activity using Wazuh
+* Analyze alerts using rule IDs
+* Map the attack to MITRE ATT&CK
 
 ---
 
 ##  Tools & Technologies
 
-* Wazuh SIEM (Log monitoring & threat detection)
-* Kali Linux (Attacker machine)
-* Ubuntu (Target + Wazuh server)
-* Hydra (Brute force attack tool)
-* SSH (Target service)
+* Wazuh SIEM
+* Kali Linux (Attacker)
+* Ubuntu (Target + Server)
+* Hydra (Brute force tool)
+* SSH
+* Linux logs (`/var/log/auth.log`)
 
 ---
 
-##  Architecture
+##  Lab Architecture
 
-Attacker (Kali Linux) → SSH Attack → Target (Ubuntu) → Log Generation → Wazuh Agent/Manager → Alert Detection → Dashboard Visualization
+Attacker (Kali) → SSH Attack → Ubuntu → Log Generation → Wazuh → Alert Detection → Dashboard
 
 ---
 
 ##  Methodology
 
-### 1️ Environment Setup
+### 1. Setup
 
-* Installed Wazuh on Ubuntu system
-* Configured dashboard and log monitoring
-* Enabled SSH service on target system
+* Installed Wazuh on Ubuntu
+* Enabled SSH service
 
 ---
 
-### 2️ Attack Simulation
+### 2. Attack Simulation
 
-Performed brute force attack using Hydra:
-
-```
+```bash
 hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://<target-ip>
 ```
 
 * Generated multiple failed login attempts
-* Simulated real-world attack behavior
+* Simulated brute force attack
 
 ---
 
-### 3️ Log Analysis
+### 3. Log Monitoring
 
-Authentication logs monitored from:
+Logs collected from:
 
-```
+```bash
 /var/log/auth.log
 ```
 
-Sample log:
+Example:
 
-```
+```bash
 Failed password for root from <attacker-ip> port 22 ssh2
 ```
 
 ---
 
-### 4️ Detection using Wazuh
+##  Detection using Wazuh
 
 Wazuh detected:
 
 * Repeated failed login attempts
-* Suspicious authentication patterns
-* Brute force attack behavior
+* Authentication activity
+* Suspicious login patterns
 
-Alerts generated with:
+Alerts included:
 
-* Rule IDs (e.g., 5710, 5712)
-* Source IP identification
-* Log correlation
+* Rule ID
+* Source IP
+* Log message
 
 ---
 
-##  Screenshots
+##  MITRE ATT&CK Mapping
 
-###  Wazuh Dashboard
+* **Tactic:** Credential Access
+* **Technique:** Brute Force (T1110)
+* **Sub-technique:** Password Guessing (T1110.001)
 
-![Dashboard](wazuh-dashboard.png.jpeg)
+This demonstrates how repeated login attempts align with known attacker behavior in real-world SOC environments.
 
-###  Brute Force Attack (Hydra)
+---
 
-![Attack](hydra-attack.png.jpeg)
+##  Rule ID Analysis
 
-###  Log Evidence (auth.log)
+The following Wazuh rules were observed during detection:
 
-![Logs](auth-log.png.jpeg)
+* **Rule ID 2502** → Authentication-related event (user/session activity)
+* **Rule ID 5763** → SSH/PAM authentication log activity
+* **Rule ID 40111** → System or authentication monitoring event
+* **Rule ID 5551** → User/session activity tracking
 
-###  Security Alerts
+These rules help identify:
 
-![Alerts](alerts.png.jpeg)
+* Login attempts
+* Session behavior
+* Authentication patterns
 
-###  Alert Details
+Combined with failed login events, they provide context for detecting brute force attacks.
 
-![Details](alert-details.png.jpeg)
+---
+
+## 📸 Screenshots
+
+### 🔹 Wazuh Dashboard
+
+![Dashboard](screenshots/wazuh-dashboard.png)
+
+### 🔹 Brute Force Attack
+
+![Attack](screenshots/hydra-attack.png)
+
+### 🔹 Log Evidence
+
+![Logs](screenshots/auth-log.png)
+
+### 🔹 Alerts Overview
+
+![Alerts](screenshots/alerts.png)
+
+### 🔹 Alert Details
+
+![Details](screenshots/alert-details.png)
 
 ---
 
 ##  Results
 
-* Successfully simulated SSH brute force attack
-* Generated multiple authentication failure logs
-* Wazuh detected and alerted suspicious activity
-* Attacker IP successfully identified
+* Successfully simulated brute force attack
+* Generated multiple authentication logs
+* Detected suspicious activity using Wazuh
+* Identified attacker behavior through alerts
 
 ---
 
-##  Key Learnings
+##  Remediation
 
-* Understanding of brute force attack techniques
-* Hands-on experience with SIEM (Wazuh)
-* Log analysis and threat detection
-* SOC workflow: Monitoring → Detection → Investigation
+* Disable root SSH login
+* Enforce strong password policies
+* Enable firewall-based IP blocking
+* Use multi-factor authentication (MFA)
+
+---
+
+##  Limitations
+
+* No automated response implemented
+* Limited to SSH brute force attack
+* Small lab environment
+
+---
+
+##  Future Improvements
+
+* Implement active response (auto IP blocking)
+* Add email alerting
+* Extend detection to other attack types
 
 ---
 
 ##  Conclusion
 
-This project demonstrates the effectiveness of Wazuh SIEM in detecting brute force attacks through real-time log monitoring and rule-based analysis. It reflects practical SOC-level skills in threat detection and incident analysis.
+This project demonstrates how Wazuh SIEM effectively detects brute force attacks using log monitoring and rule-based analysis, reflecting real-world SOC workflows and MITRE ATT&CK alignment.
 
 ---
