@@ -126,7 +126,7 @@ Combined with failed login events, they provide context for detecting brute forc
 
 ### 🔹 Brute Force Attack
 
-![Attack](screenshots/hydra-attack.png)
+![Attack](hydra-attack.png.jpeg)
 
 ### 🔹 Log Evidence
 
