@@ -104,7 +104,7 @@ Alerts generated with:
 
 ###  Security Alerts
 
-![Alerts](screenshots/alerts.png)
+![Alerts](alerts.png.jpeg)
 
 ###  Alert Details
 
