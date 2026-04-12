@@ -1,6 +1,6 @@
 #  Brute Force Attack Simulation & Detection using Wazuh SIEM
 
- SOC Project | SIEM | Log Analysis | Threat Detection
+ SOC Project | SIEM | Log Analysis | Threat Detection | SOC Workflow
 
 ---
 
