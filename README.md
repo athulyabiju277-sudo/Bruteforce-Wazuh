@@ -122,7 +122,7 @@ Combined with failed login events, they provide context for detecting brute forc
 
 ### 🔹 Wazuh Dashboard
 
-![Dashboard](screenshots/wazuh-dashboard.png)
+![Dashboard](wazuh-dashboard.png.jpeg)
 
 ### 🔹 Brute Force Attack
 
