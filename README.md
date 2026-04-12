@@ -92,7 +92,7 @@ Alerts generated with:
 
 ###  Wazuh Dashboard
 
-![Dashboard](screenshots/wazuh-dashboard.png)
+![Dashboard](wazuh-dashboard.png.jpeg)
 
 ###  Brute Force Attack (Hydra)
 
