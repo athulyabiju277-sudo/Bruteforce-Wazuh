@@ -130,7 +130,7 @@ Combined with failed login events, they provide context for detecting brute forc
 
 ### 🔹 Log Evidence
 
-![Logs](screenshots/auth-log.png)
+![Logs](auth-log.png.jpeg)
 
 ### 🔹 Alerts Overview
 
