@@ -100,7 +100,7 @@ Alerts generated with:
 
 ###  Log Evidence (auth.log)
 
-![Logs](screenshots/auth-log.png)
+![Logs](auth-log.png.jpeg)
 
 ###  Security Alerts
 
