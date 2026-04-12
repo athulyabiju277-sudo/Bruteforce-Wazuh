@@ -136,7 +136,7 @@ Combined with failed login events, they provide context for detecting brute forc
 
 ![Alerts](Failedloginattempts.png.jpeg)
 ![Alerts](Failedloginattempts.png.jpeg)
-![Alerts](Failedloginattempts.png.jpeg)
+![Alerts level]()
 
 ### 🔹 Alert Details
 
