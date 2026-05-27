@@ -287,7 +287,7 @@ Brute-force behavior detected in logs
 
 ### 🔹 Wazuh Detection Alert
 
-![Alert](wazuh-alert2.jpeg)
+![Alert](wazuh_alert2.jpeg)
 
 ### 🔹 Active Response Execution Logs
 
